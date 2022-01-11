@@ -35,6 +35,11 @@ public class BookJdbcDaoImpl implements BookJdbcDao{
 	                book.getBookPrice(), book.getBookId());
 	    }
 
+	    @Override
+	    public int updateAll() {
+	        return jdbcTemplate.update(
+	                "update books set bookpages=500");
+	    }
 
 	    @Override
 	    public int deleteById(int id) {
@@ -42,7 +47,12 @@ public class BookJdbcDaoImpl implements BookJdbcDao{
 	                "delete books where BookId = ?",
 	                id);
 	    }
-
+	    @Override
+	    public int deleteAll() {
+	        return jdbcTemplate.update(
+	                "delete from books");
+	               
+	    }
 	    @Override
 	    public List<Book> findAll() {
 	        return jdbcTemplate.query(

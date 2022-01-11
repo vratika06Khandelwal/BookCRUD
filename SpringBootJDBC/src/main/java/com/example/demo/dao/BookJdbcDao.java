@@ -13,6 +13,9 @@ public interface BookJdbcDao {
 	    public int update(Book book);
 
 	    public int deleteById(int id);
+	    
+	    public int deleteAll();
+	    public int updateAll();
 
 	    public List<Book> findAll();
 
